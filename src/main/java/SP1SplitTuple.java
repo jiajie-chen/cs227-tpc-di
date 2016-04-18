@@ -42,15 +42,14 @@ public class SP1SplitTuple extends VoltProcedure { //VoltProcedure?
     		String[] st = tuples[i].split("\\|", -1);
         T_ID = new Long(st[0]);
     		voltQueueSQL(SP1OutStmt, //st[0],new Long(st[1]),
-    								T_ID,st[1],st[2]
-    								 ,st[3],new Short(st[4]),st[5],new Integer(st[6])
-    								 ,new Double(st[7]),new Integer(st[8]),st[9],new Double(replaceWithZeroIfEmpty(st[10])),
-    								 new Double(replaceWithZeroIfEmpty(st[11])),new Double(replaceWithZeroIfEmpty(st[12])),new Double(replaceWithZeroIfEmpty(st[13])),
-    								 batchid,
-                     part_id
-    								);
-    								
-    		//voltQueueSQL?
+    		T_ID,st[1],st[2],st[3],new Short(st[4]),st[5],new Integer(st[6])
+    		,new Double(st[7]),new Integer(st[8]),st[9],new Double(replaceWithZeroIfEmpty(st[10])),
+    		new Double(replaceWithZeroIfEmpty(st[11])),new Double(replaceWithZeroIfEmpty(st[12])),
+    		new Double(replaceWithZeroIfEmpty(st[13])),
+    		batchid,part_id
+    		);
+    		
+    	//voltQueueSQL?
 
       }
     	//voltExecuteSQL();
