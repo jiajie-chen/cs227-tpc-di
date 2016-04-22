@@ -114,7 +114,7 @@ public class SP2GetTypes extends VoltProcedure {
 			long SK_CreateTimeID = -1;
 			long SK_CloseDateID = -1;
 			long SK_CloseTimeID = -1;
-			
+
 			if((T_ST_ID.equals("SBMT") && (T_TT_ID.equals("TMB") || T_TT_ID.equals("TMS"))) || T_ST_ID.equals("PNDG")) {
 				SK_CreateDateID = results[2].fetchRow(0).getLong(0);
 				SK_CreateTimeID = results[3].fetchRow(0).getLong(0);

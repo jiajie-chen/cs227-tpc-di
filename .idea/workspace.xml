@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3873653-cfbe-42cc-a401-eb6e410a2f80" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/TPCDIClient.java" afterPath="$PROJECT_DIR$/src/main/java/TPCDIClient.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/TPCDIUtil.java" afterPath="$PROJECT_DIR$/src/main/java/TPCDIUtil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpcdi/orig/procedures/SP2GetTypes.java" afterPath="$PROJECT_DIR$/tpcdi/orig/procedures/SP2GetTypes.java" />
     </list>
     <ignored path="cs227-tpc-di.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,144 +27,138 @@
     <favorites_list name="cs227-tpc-di" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TPCDIClient.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/TPCDIClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8031496">
-              <caret line="103" column="40" selection-start-line="103" selection-start-column="40" selection-end-line="103" selection-end-column="40" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="imports" expanded="true" />
-                <marker date="1461181725000" expanded="true" signature="1035:1052" placeholder="DROP TABLE S... " />
-                <marker date="1461181725000" expanded="true" signature="1083:1102" placeholder="CREATE TABLE... SP1out" />
-                <marker date="1461181725000" expanded="true" signature="1083:1103" placeholder="CREATE TABLE... SP1out" />
-                <marker date="1461181725000" expanded="true" signature="1083:1150" placeholder="CREATE TABLE... SP1out" />
-                <marker date="1461181725000" expanded="true" signature="1083:1151" placeholder="CREATE TABLE... SP1out" />
-                <marker date="1461181725000" expanded="true" signature="1083:1204" placeholder="CREATE TABLE... SP1out" />
-                <marker date="1461181725000" expanded="true" signature="1083:1259" placeholder="CREATE TABLE... SP1out" />
-                <marker date="1461181725000" expanded="true" signature="1083:1314" placeholder="CREATE TABLE... SP1out" />
-                <marker date="1461181725000" expanded="true" signature="1083:1359" placeholder="CREATE TABLE... SP1out" />
-                <marker date="1461181725000" expanded="true" signature="1083:1416" placeholder="CREATE TABLE... SP1out" />
-                <marker date="1461181725000" expanded="true" signature="1083:1425" placeholder="CREATE TABLE... SP1out" />
-                <marker date="1461181725000" expanded="true" signature="1083:1472" placeholder="CREATE TABLE... SP1out" />
-                <marker date="1461181725000" expanded="true" signature="1083:1526" placeholder="CREATE TABLE... SP1out" />
-                <marker date="1461181725000" expanded="true" signature="1083:1564" placeholder="CREATE TABLE... SP1out" />
-                <marker date="1461181725000" expanded="true" signature="1083:1624" placeholder="CREATE TABLE... SP1out" />
-                <marker date="1461181725000" expanded="true" signature="1083:1681" placeholder="CREATE TABLE... SP1out" />
-                <marker date="1461181725000" expanded="true" signature="1083:1720" placeholder="CREATE TABLE... SP1out" />
-                <marker date="1461181725000" expanded="true" signature="1083:1760" placeholder="CREATE TABLE... SP1out" />
-                <marker date="1461181725000" expanded="true" signature="1083:1800" placeholder="CREATE TABLE... SP1out" />
-                <marker date="1461181725000" expanded="true" signature="1083:1852" placeholder="CREATE TABLE... SP1out" />
-                <marker date="1461181725000" expanded="true" signature="1083:1890" placeholder="CREATE TABLE... SP1out" />
-                <marker date="1461181725000" expanded="true" signature="1083:1925" placeholder="CREATE TABLE... SP1out" />
-                <marker date="1461181725000" expanded="true" signature="3245:4029" placeholder="INSERT INTO SP1out... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TPCDILoader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tpcdi/orig/TPCDILoader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-48.88889">
-              <caret line="110" column="32" selection-start-line="110" selection-start-column="32" selection-end-line="110" selection-end-column="32" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SP1SplitTuple.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tpcdi/orig/procedures/SP1SplitTuple.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="82" column="28" selection-start-line="76" selection-start-column="33" selection-end-line="82" selection-end-column="28" />
-              <folding>
-                <element signature="e#0#4191#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tpcdiorig-ddl.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tpcdi/orig/tpcdiorig-ddl.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.617284">
-              <caret line="175" column="2" selection-start-line="175" selection-start-column="2" selection-end-line="175" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SP2GetTypes.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tpcdi/orig/procedures/SP2GetTypes.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-23.88889">
-              <caret line="127" column="32" selection-start-line="127" selection-start-column="28" selection-end-line="127" selection-end-column="32" />
-              <folding>
-                <element signature="e#0#5090#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SP3GetSecurityID.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tpcdi/orig/procedures/SP3GetSecurityID.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="80" column="129" selection-start-line="80" selection-start-column="129" selection-end-line="80" selection-end-column="129" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SP5InsertTrade.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tpcdi/orig/procedures/SP5InsertTrade.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="92" column="108" selection-start-line="92" selection-start-column="108" selection-end-line="92" selection-end-column="108" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tpcdiorig.mappings" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tpcdi/orig/tpcdiorig.mappings">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SP4GetAccountInfo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tpcdi/orig/procedures/SP4GetAccountInfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#3778#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CalculateStats.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tpcdi/orig/procedures/CalculateStats.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="TPCDIClient.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/TPCDIClient.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="22.777779">
+                  <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+                  <folding>
+                    <element signature="n#!!doc" expanded="true" />
+                    <element signature="imports" expanded="true" />
+                    <element signature="method#replaceWithZeroIfEmpty#0;class#TPCDIClient#0" expanded="false" />
+                    <element signature="method#TPCDIClient#0;class#TPCDIClient#0" expanded="false" />
+                    <element signature="method#getDateID#0;class#TPCDIClient#0" expanded="false" />
+                    <element signature="method#getTimeID#0;class#TPCDIClient#0" expanded="false" />
+                    <element signature="method#getStatus#0;class#TPCDIClient#0" expanded="false" />
+                    <element signature="method#getTradeType#0;class#TPCDIClient#0" expanded="false" />
+                    <marker date="1461293126000" expanded="true" signature="393:439" placeholder="SELECT ST_NA... StatusType" />
+                    <marker date="1461293126000" expanded="true" signature="492:537" placeholder="SELECT TT_NA... TradeType" />
+                    <marker date="1461293126000" expanded="true" signature="686:766" placeholder="SELECT SK_Ti... DimTime" />
+                    <marker date="1461293126000" expanded="true" signature="4361:5181" placeholder="INSERT INTO SP1out... " />
+                    <marker date="1461293126000" expanded="true" signature="5668:5685" placeholder="DROP TABLE S... " />
+                    <marker date="1461293126000" expanded="true" signature="5716:5735" placeholder="CREATE TABLE... SP1out" />
+                    <marker date="1461293126000" expanded="true" signature="5716:5736" placeholder="CREATE TABLE... SP1out" />
+                    <marker date="1461293126000" expanded="true" signature="5716:5783" placeholder="CREATE TABLE... SP1out" />
+                    <marker date="1461293126000" expanded="true" signature="5716:5784" placeholder="CREATE TABLE... SP1out" />
+                    <marker date="1461293126000" expanded="true" signature="5716:5837" placeholder="CREATE TABLE... SP1out" />
+                    <marker date="1461293126000" expanded="true" signature="5716:5892" placeholder="CREATE TABLE... SP1out" />
+                    <marker date="1461293126000" expanded="true" signature="5716:5947" placeholder="CREATE TABLE... SP1out" />
+                    <marker date="1461293126000" expanded="true" signature="5716:5992" placeholder="CREATE TABLE... SP1out" />
+                    <marker date="1461293126000" expanded="true" signature="5716:6049" placeholder="CREATE TABLE... SP1out" />
+                    <marker date="1461293126000" expanded="true" signature="5716:6058" placeholder="CREATE TABLE... SP1out" />
+                    <marker date="1461293126000" expanded="true" signature="5716:6105" placeholder="CREATE TABLE... SP1out" />
+                    <marker date="1461293126000" expanded="true" signature="5716:6159" placeholder="CREATE TABLE... SP1out" />
+                    <marker date="1461293126000" expanded="true" signature="5716:6197" placeholder="CREATE TABLE... SP1out" />
+                    <marker date="1461293126000" expanded="true" signature="5716:6257" placeholder="CREATE TABLE... SP1out" />
+                    <marker date="1461293126000" expanded="true" signature="5716:6314" placeholder="CREATE TABLE... SP1out" />
+                    <marker date="1461293126000" expanded="true" signature="5716:6353" placeholder="CREATE TABLE... SP1out" />
+                    <marker date="1461293126000" expanded="true" signature="5716:6393" placeholder="CREATE TABLE... SP1out" />
+                    <marker date="1461293126000" expanded="true" signature="5716:6433" placeholder="CREATE TABLE... SP1out" />
+                    <marker date="1461293126000" expanded="true" signature="5716:6485" placeholder="CREATE TABLE... SP1out" />
+                    <marker date="1461293126000" expanded="true" signature="5716:6523" placeholder="CREATE TABLE... SP1out" />
+                    <marker date="1461293126000" expanded="true" signature="5716:6558" placeholder="CREATE TABLE... SP1out" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="TPCDIUtil.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/TPCDIUtil.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="tpcdiorig.mappings" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/tpcdi/orig/tpcdiorig.mappings">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="tpcdiorig-ddl.sql" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/tpcdi/orig/tpcdiorig-ddl.sql">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-5.2777777">
+                  <caret line="164" column="12" selection-start-line="164" selection-start-column="4" selection-end-line="164" selection-end-column="12" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="TPCDILoader.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/tpcdi/orig/TPCDILoader.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="2.7407408">
+                  <caret line="298" column="46" selection-start-line="298" selection-start-column="38" selection-end-line="298" selection-end-column="46" />
+                  <folding>
+                    <element signature="n#!!doc" expanded="false" />
+                    <element signature="imports" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="SP3GetSecurityID.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/tpcdi/orig/procedures/SP3GetSecurityID.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="80" column="129" selection-start-line="80" selection-start-column="129" selection-end-line="80" selection-end-column="129" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="SP4GetAccountInfo.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/tpcdi/orig/procedures/SP4GetAccountInfo.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.63076925">
+                  <caret line="78" column="39" selection-start-line="78" selection-start-column="39" selection-end-line="78" selection-end-column="39" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="SP2GetTypes.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/tpcdi/orig/procedures/SP2GetTypes.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.7846154">
+                  <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#0#5087#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -188,6 +183,8 @@
         <option value="$PROJECT_DIR$/tpcdi/orig/procedures/SP1SplitTuple.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/SP1SplitTuple.java" />
+        <option value="$PROJECT_DIR$/src/main/java/TPCDIUtil.java" />
+        <option value="$PROJECT_DIR$/tpcdi/orig/procedures/SP2GetTypes.java" />
         <option value="$PROJECT_DIR$/src/main/java/TPCDIClient.java" />
       </list>
     </option>
@@ -887,12 +884,12 @@
       <workItem from="1458172307277" duration="450000" />
       <workItem from="1460743072900" duration="2130000" />
       <workItem from="1461087865718" duration="5876000" />
-      <workItem from="1461135013545" duration="7434000" />
+      <workItem from="1461135013545" duration="14606000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15890000" />
+    <option name="totallyTimeSpent" value="23062000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -905,7 +902,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21236292" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21236292" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21428572" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -923,6 +920,32 @@
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32934132" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32801595" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21236292" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32934132" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21428572" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -961,29 +984,38 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <marker date="1461181725000" expanded="true" signature="1035:1052" placeholder="DROP TABLE S... " />
-            <marker date="1461181725000" expanded="true" signature="1083:1102" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1103" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1150" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1151" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1204" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1259" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1314" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1359" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1416" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1425" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1472" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1526" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1564" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1624" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1681" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1720" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1760" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1800" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1852" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1890" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1925" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="3245:4029" placeholder="INSERT INTO SP1out... " />
+            <element signature="method#replaceWithZeroIfEmpty#0;class#TPCDIClient#0" expanded="false" />
+            <element signature="method#TPCDIClient#0;class#TPCDIClient#0" expanded="false" />
+            <element signature="method#getDateID#0;class#TPCDIClient#0" expanded="false" />
+            <element signature="method#getTimeID#0;class#TPCDIClient#0" expanded="false" />
+            <element signature="method#getStatus#0;class#TPCDIClient#0" expanded="false" />
+            <element signature="method#getTradeType#0;class#TPCDIClient#0" expanded="false" />
+            <marker date="1461293126000" expanded="true" signature="393:439" placeholder="SELECT ST_NA... StatusType" />
+            <marker date="1461293126000" expanded="true" signature="492:537" placeholder="SELECT TT_NA... TradeType" />
+            <marker date="1461293126000" expanded="true" signature="686:766" placeholder="SELECT SK_Ti... DimTime" />
+            <marker date="1461293126000" expanded="true" signature="4361:5181" placeholder="INSERT INTO SP1out... " />
+            <marker date="1461293126000" expanded="true" signature="5668:5685" placeholder="DROP TABLE S... " />
+            <marker date="1461293126000" expanded="true" signature="5716:5735" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:5736" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:5783" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:5784" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:5837" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:5892" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:5947" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:5992" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6049" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6058" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6105" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6159" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6197" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6257" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6314" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6353" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6393" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6433" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6485" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6523" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6558" placeholder="CREATE TABLE... SP1out" />
           </folding>
         </state>
       </provider>
@@ -1001,7 +1033,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
           <folding>
-            <element signature="e#0#4191#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <marker date="1461176926000" expanded="true" signature="2480:4189" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1011,7 +1044,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="125" column="12" selection-start-line="125" selection-start-column="12" selection-end-line="125" selection-end-column="12" />
           <folding>
-            <element signature="e#0#5090#0" expanded="true" />
+            <element signature="e#0#5087#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1078,29 +1111,38 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <marker date="1461181725000" expanded="true" signature="1035:1052" placeholder="DROP TABLE S... " />
-            <marker date="1461181725000" expanded="true" signature="1083:1102" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1103" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1150" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1151" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1204" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1259" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1314" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1359" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1416" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1425" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1472" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1526" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1564" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1624" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1681" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1720" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1760" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1800" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1852" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1890" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1925" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="3245:4029" placeholder="INSERT INTO SP1out... " />
+            <element signature="method#replaceWithZeroIfEmpty#0;class#TPCDIClient#0" expanded="false" />
+            <element signature="method#TPCDIClient#0;class#TPCDIClient#0" expanded="false" />
+            <element signature="method#getDateID#0;class#TPCDIClient#0" expanded="false" />
+            <element signature="method#getTimeID#0;class#TPCDIClient#0" expanded="false" />
+            <element signature="method#getStatus#0;class#TPCDIClient#0" expanded="false" />
+            <element signature="method#getTradeType#0;class#TPCDIClient#0" expanded="false" />
+            <marker date="1461293126000" expanded="true" signature="393:439" placeholder="SELECT ST_NA... StatusType" />
+            <marker date="1461293126000" expanded="true" signature="492:537" placeholder="SELECT TT_NA... TradeType" />
+            <marker date="1461293126000" expanded="true" signature="686:766" placeholder="SELECT SK_Ti... DimTime" />
+            <marker date="1461293126000" expanded="true" signature="4361:5181" placeholder="INSERT INTO SP1out... " />
+            <marker date="1461293126000" expanded="true" signature="5668:5685" placeholder="DROP TABLE S... " />
+            <marker date="1461293126000" expanded="true" signature="5716:5735" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:5736" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:5783" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:5784" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:5837" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:5892" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:5947" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:5992" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6049" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6058" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6105" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6159" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6197" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6257" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6314" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6353" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6393" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6433" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6485" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6523" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6558" placeholder="CREATE TABLE... SP1out" />
           </folding>
         </state>
       </provider>
@@ -1205,14 +1247,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/TPCDIUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1171875">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cs227-tpc-di.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1287,40 +1321,140 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/src.zip!/java/lang/Long.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="964" column="0" selection-start-line="964" selection-start-column="0" selection-end-line="964" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpcdi/orig/TPCDILoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-48.88889">
-          <caret line="110" column="32" selection-start-line="110" selection-start-column="32" selection-end-line="110" selection-end-column="32" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tpcdi/orig/procedures/SP1SplitTuple.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="82" column="28" selection-start-line="76" selection-start-column="33" selection-end-line="82" selection-end-column="28" />
           <folding>
-            <element signature="e#0#4191#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <marker date="1461176926000" expanded="true" signature="2480:4189" placeholder="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpcdi/orig/procedures/SP5InsertTrade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="92" column="108" selection-start-line="92" selection-start-column="108" selection-end-line="92" selection-end-column="108" />
+          <folding>
+            <element signature="e#0#4294#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1816#1817#0" expanded="false" />
+            <element signature="e#1848#1849#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpcdi/orig/TPCDILoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.7407408">
+          <caret line="298" column="46" selection-start-line="298" selection-start-column="38" selection-end-line="298" selection-end-column="46" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpcdi/orig/tpcdiorig.mappings">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/src.zip!/java/lang/Number.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="54" column="22" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/src.zip!/java/lang/Long.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="53" column="34" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="110" column="19" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TPCDIUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpcdi/orig/tpcdiorig-ddl.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.2777777">
+          <caret line="164" column="12" selection-start-line="164" selection-start-column="4" selection-end-line="164" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tpcdi/orig/procedures/SP2GetTypes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.88889">
-          <caret line="127" column="32" selection-start-line="127" selection-start-column="28" selection-end-line="127" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.7846154">
+          <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
           <folding>
-            <element signature="e#0#5090#0" expanded="true" />
+            <element signature="e#0#5087#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TPCDIClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="22.777779">
+          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#replaceWithZeroIfEmpty#0;class#TPCDIClient#0" expanded="false" />
+            <element signature="method#TPCDIClient#0;class#TPCDIClient#0" expanded="false" />
+            <element signature="method#getDateID#0;class#TPCDIClient#0" expanded="false" />
+            <element signature="method#getTimeID#0;class#TPCDIClient#0" expanded="false" />
+            <element signature="method#getStatus#0;class#TPCDIClient#0" expanded="false" />
+            <element signature="method#getTradeType#0;class#TPCDIClient#0" expanded="false" />
+            <marker date="1461293126000" expanded="true" signature="393:439" placeholder="SELECT ST_NA... StatusType" />
+            <marker date="1461293126000" expanded="true" signature="492:537" placeholder="SELECT TT_NA... TradeType" />
+            <marker date="1461293126000" expanded="true" signature="686:766" placeholder="SELECT SK_Ti... DimTime" />
+            <marker date="1461293126000" expanded="true" signature="4361:5181" placeholder="INSERT INTO SP1out... " />
+            <marker date="1461293126000" expanded="true" signature="5668:5685" placeholder="DROP TABLE S... " />
+            <marker date="1461293126000" expanded="true" signature="5716:5735" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:5736" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:5783" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:5784" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:5837" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:5892" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:5947" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:5992" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6049" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6058" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6105" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6159" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6197" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6257" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6314" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6353" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6393" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6433" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6485" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6523" placeholder="CREATE TABLE... SP1out" />
+            <marker date="1461293126000" expanded="true" signature="5716:6558" placeholder="CREATE TABLE... SP1out" />
           </folding>
         </state>
       </provider>
@@ -1335,69 +1469,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tpcdi/orig/procedures/SP4GetAccountInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#3778#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpcdi/orig/procedures/SP5InsertTrade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="92" column="108" selection-start-line="92" selection-start-column="108" selection-end-line="92" selection-end-column="108" />
+        <state vertical-scroll-proportion="0.63076925">
+          <caret line="78" column="39" selection-start-line="78" selection-start-column="39" selection-end-line="78" selection-end-column="39" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpcdi/orig/tpcdiorig.mappings">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpcdi/orig/tpcdiorig-ddl.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.617284">
-          <caret line="175" column="2" selection-start-line="175" selection-start-column="2" selection-end-line="175" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/TPCDIClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8031496">
-          <caret line="103" column="40" selection-start-line="103" selection-start-column="40" selection-end-line="103" selection-end-column="40" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <marker date="1461181725000" expanded="true" signature="1035:1052" placeholder="DROP TABLE S... " />
-            <marker date="1461181725000" expanded="true" signature="1083:1102" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1103" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1150" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1151" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1204" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1259" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1314" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1359" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1416" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1425" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1472" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1526" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1564" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1624" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1681" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1720" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1760" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1800" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1852" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1890" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="1083:1925" placeholder="CREATE TABLE... SP1out" />
-            <marker date="1461181725000" expanded="true" signature="3245:4029" placeholder="INSERT INTO SP1out... " />
-          </folding>
         </state>
       </provider>
     </entry>
