@@ -3,6 +3,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -28,7 +29,11 @@ public class TPCDILoader {
     private static HashMap<Long, Long> acctIDs;
     private static AtomicInteger objectType;
     
+    private static HashMap<String, AtomicLong> copiedRowCount;
+    
     private static CopyManager cm;
+    private static HashMap<String, CopyIn> tableCopiers;
+    /*
     private static CopyIn statusTypeCopier;
     private static CopyIn tradeTypeCopier;
     private static CopyIn dimDateCopier;
@@ -38,6 +43,7 @@ public class TPCDILoader {
     private static CopyIn dimCompanyCopier;
     private static CopyIn dimCustomerCopier;
     private static CopyIn dimAccountCopier;
+    */
     
 	public TPCDILoader(Connection dbConn) throws SQLException {//String[] args) {
         //super(args);
@@ -52,6 +58,15 @@ public class TPCDILoader {
         objectType = new AtomicInteger();
         
         cm = new CopyManager((BaseConnection) dbConn);
+        copiedRowCount = new HashMap<>(TPCDIConstants.LOADFILES.length);
+        tableCopiers = new HashMap<>(TPCDIConstants.LOADFILES.length);
+        for (String[] s : TPCDIConstants.LOADFILES) {
+        	// init row counts for all tables to be loaded
+        	copiedRowCount.put(s[0], new AtomicLong());
+        	// init copiers for all tables to be loaded (no escaping of table names...)
+        	tableCopiers.put(s[0], cm.copyIn("COPY " + s[0] + " FROM STDIN WITH CSV"));
+        }
+        /*
         statusTypeCopier = cm.copyIn("COPY " + TPCDIConstants.STATUSTYPE_TABLE + " FROM STDIN WITH CSV");
         tradeTypeCopier = cm.copyIn("COPY " + TPCDIConstants.TRADETYPE_TABLE + " FROM STDIN WITH CSV");
         dimDateCopier = cm.copyIn("COPY " + TPCDIConstants.DIMDATE_TABLE + " FROM STDIN WITH CSV");
@@ -61,10 +76,14 @@ public class TPCDILoader {
         dimCompanyCopier = cm.copyIn("COPY " + TPCDIConstants.DIMCOMPANY_TABLE + " FROM STDIN WITH CSV");
         dimCustomerCopier = cm.copyIn("COPY " + TPCDIConstants.DIMCUSTOMER_TABLE + " FROM STDIN WITH CSV");
         dimAccountCopier = cm.copyIn("COPY " + TPCDIConstants.DIMACCOUNT_TABLE + " FROM STDIN WITH CSV");
+        */
+        
+        // drop and recreate the tables
+        //createTables(dbConn);
     }
 	
 	public Object[] parseRow(String tablename, String tuple, int partId) {
-		Object[] row = null;
+		Object[] row = new Object[tableCopiers.get(tablename).getFieldCount()];
 		
     	String[] parseTuple;
     	long sk_id;
@@ -75,27 +94,21 @@ public class TPCDILoader {
     	case TPCDIConstants.DIMTRADE_TABLE:
     		break;
     	case TPCDIConstants.STATUSTYPE_TABLE:
-    		row = new Object[TPCDIConstants.STATUSTYPE_COLS];
-    		
     		parseTuple = tuple.split("\\|");
      		row[0] = parseTuple[0];
     		row[1]= parseTuple[1];
-				row[2] = partId;
+				//row[2] = partId;
     		break;
     	case TPCDIConstants.TRADETYPE_TABLE:
-    		row = new Object[TPCDIConstants.TRADETYPE_COLS];
-    		
     		parseTuple = tuple.split("\\|");
     		row[0] = parseTuple[0];
 				row[1] = parseTuple[1];
 				row[2] = new Integer(parseTuple[2]);
 				row[3] = new Integer(parseTuple[3]);
-				row[4] = partId;
+				//row[4] = partId;
  			break;
     	case TPCDIConstants.TRADETXT_TABLE:
     	case TPCDIConstants.DIMDATE_TABLE:
-    		row = new Object[TPCDIConstants.DIMDATE_COLS];
-    		
     		parseTuple = tuple.split("\\|");
     		row[0] = new Long(parseTuple[0]);
     		row[1] = parseTuple[1];
@@ -105,21 +118,17 @@ public class TPCDILoader {
     		row[5] = new Integer(parseTuple[11]);
     		row[6] = new Integer(parseTuple[13]);
     		row[7] = new Integer(parseTuple[15]);
-				row[8] = partId;
+				//row[8] = partId;
     		break;    		
     	case TPCDIConstants.DIMTIME_TABLE:
-    		row = new Object[TPCDIConstants.DIMTIME_COLS];
-    		
     		parseTuple = tuple.split("\\|");
     		row[0] = new Long(parseTuple[0]);
     		row[1] = new Integer(parseTuple[2]);
     		row[2] = new Integer(parseTuple[4]);
     		row[3] = new Integer(parseTuple[6]);
-				row[4] = partId;
+				//row[4] = partId;
     		break;    		
     	case TPCDIConstants.DIMBROKER_TABLE://csv HR.csv
-    		row = new Object[TPCDIConstants.DIMBROKER_COLS];
-    		
     		parseTuple = tuple.split(",");
     		if(!parseTuple[5].equals("314"))
     			return null;
@@ -130,8 +139,6 @@ public class TPCDILoader {
     		brokerIDs.put(orig_id, sk_id);    		
     		break;
     	case TPCDIConstants.DIMSECURITY_TABLE:
-    		row = new Object[TPCDIConstants.DIMSECURITY_COLS];
-    		
     		type = tuple.substring(15, 18);
     		symbol = tuple.substring(18, 33);
     		String coNameOrCIK = tuple.substring(160);
@@ -140,7 +147,7 @@ public class TPCDILoader {
     		sk_id = uniqueIDs.get(tablename).getAndIncrement();
     		row[0] = sk_id;
     		row[1] = symbol;
-				row[3] = TPCDIUtil.hashCode(symbol);
+				//row[3] = TPCDIUtil.hashCode(symbol);
     		if(StringUtils.isNumeric(coNameOrCIK)){
     			if(!compIDs.containsKey(new Long(coNameOrCIK))) {
     				System.out.println(coNameOrCIK + " not found in DimCompany!");
@@ -158,8 +165,6 @@ public class TPCDILoader {
     		secIDs.put(symbol, sk_id);
     		break;
     	case TPCDIConstants.DIMCOMPANY_TABLE:
-    		row = new Object[TPCDIConstants.DIMCOMPANY_COLS];
-    		
     		type = tuple.substring(15, 18);
     		
     		if(!type.equals("CMP"))
@@ -176,8 +181,6 @@ public class TPCDILoader {
     		break;
     		
     	case TPCDIConstants.DIMCUSTOMER_TABLE://xml CustomerMgmt.xml
-    		row = new Object[TPCDIConstants.DIMCUSTOMER_COLS];
-    		
     		parseTuple = tuple.split("\\|");
     		type = parseTuple[0];
     		if(!type.equals("NEW"))
@@ -192,8 +195,6 @@ public class TPCDILoader {
     		break;
     		
     	case TPCDIConstants.DIMACCOUNT_TABLE:
-    		row = new Object[TPCDIConstants.DIMACCOUNT_COLS];
-    		
     		parseTuple = tuple.split("\\|");
     		type = parseTuple[0];
     		long orig_customer_id;
@@ -226,7 +227,7 @@ public class TPCDILoader {
     		row[1] = orig_id;
     		row[2] = new_broker_id;
     		row[3] = new_customer_id;
-				row[4] = TPCDIUtil.hashCode(String.valueOf(orig_id));
+				//row[4] = TPCDIUtil.hashCode(String.valueOf(orig_id));
     		acctIDs.put(orig_id, sk_id);
     		break;
     		
@@ -381,7 +382,7 @@ public class TPCDILoader {
 	        
 	        // while redundant b/c of the next for loop??
 	        while(nextline != null) {
-	        	// why are we doing it like this?
+	        	// why does the original benchmark does it like this?
 	        	String[] tuples = new String[TPCDIConstants.MAX_ARRAY_SIZE];
 	        	for(int curIndex = 0; curIndex < TPCDIConstants.MAX_ARRAY_SIZE; curIndex++) {
 		    		if(nextline == null)
@@ -418,6 +419,114 @@ public class TPCDILoader {
 	        br.close();
         }
 	}
+	
+	public void createTables(Connection dbConn) throws SQLException {
+		Statement st = dbConn.createStatement();
+		
+		// drop all tables to be loaded into
+		String[] tables = new String[TPCDIConstants.LOADFILES.length];
+		for (int i = 0; i < TPCDIConstants.LOADFILES.length; i++) {
+			tables[i] = TPCDIConstants.LOADFILES[i][0];
+		}
+		st.execute(
+				"DROP TABLE IF EXISTS " + String.join(", ", tables) + " CASCADE;");
+		
+		// recreate all tables w/ constraints
+		
+		// trade type
+		st.execute(
+				"CREATE TABLE TradeType ("
+				+ "TT_ID            varchar(3)   NOT NULL,"
+				+ "TT_NAME          varchar(12)  NOT NULL,"
+				+ "TT_IS_SELL       smallint  NOT NULL,"
+				+ "TT_IS_MRKT       smallint  NOT NULL,"
+				//+ "part_id          int       NOT NULL,"
+				+ "CONSTRAINT PK_TradeType PRIMARY KEY (TT_ID));");
+		
+		// status type
+		st.execute(
+				"CREATE TABLE StatusType ("
+				+ "ST_ID            varchar(4)   NOT NULL,"
+				+ "ST_NAME          varchar(10)  NOT NULL,"
+				//+ "part_id          int       NOT NULL,"
+				+ "CONSTRAINT PK_StatusType PRIMARY KEY (ST_ID));");
+		
+		// dim security
+		st.execute(
+				"CREATE TABLE DimSecurity ("
+				+ "SK_SecurityID    bigint    NOT NULL,"
+				+ "Symbol           char(15)  NOT NULL,"
+				+ "SK_CompanyID     bigint    NOT NULL,"
+				//+ "part_id          int       NOT NULL,"
+				+ "CONSTRAINT PK_DimSecurity PRIMARY KEY (SK_SecurityID));");
+		st.execute(
+				"CREATE INDEX IX_Security on DimSecurity(Symbol);");
+		
+		// dim customer
+		st.execute(
+				"CREATE TABLE DimCustomer ("
+				+ "SK_CustomerID    bigint    NOT NULL,"
+				+ "CustomerID       bigint    NOT NULL,"
+				//+ "part_id          int       NOT NULL,"
+				+ "CONSTRAINT PK_DimCustomer PRIMARY KEY (SK_CustomerID));");
+		
+		// dim company
+		st.execute(
+				"CREATE TABLE DimCompany ("
+				+ "SK_CompanyID    bigint    NOT NULL,"
+				+ "CompanyID       bigint    NOT NULL,"
+				//+ "part_id          int       NOT NULL,"
+				+ "CONSTRAINT PK_DimCompany PRIMARY KEY (SK_CompanyID));");
+		
+		// dim account
+		st.execute(
+				"CREATE TABLE DimAccount ("
+				+ "SK_AccountID    bigint    NOT NULL,"
+				+ "AccountID       bigint    NOT NULL,"
+				+ "SK_BrokerID     bigint    NOT NULL,"
+				+ "SK_CustomerID   bigint    NOT NULL,"
+				//+ "part_id          int       NOT NULL,"
+				+ "CONSTRAINT PK_DimAccount PRIMARY KEY (AccountID));");
+		
+		// dim broker
+		st.execute(
+				"CREATE TABLE DimBroker ("
+				+ "SK_BrokerID    bigint    NOT NULL,"
+				+ "BrokerID       bigint    NOT NULL,"
+				//+ "part_id          int       NOT NULL,"
+				+ "CONSTRAINT PK_DimBroker PRIMARY KEY (SK_BrokerID));");
+		
+		// dim date
+		st.execute(
+				"CREATE TABLE DimDate ("
+				+ "SK_DateID              bigint    NOT NULL,"
+				+ "DateValue		   varchar(10) NOT NULL,"
+				+ "CalendarYearID         smallint  NOT NULL,"
+				+ "CalendarMonthID        integer   NOT NULL,"
+				+ "CalendarWeekID         integer   NOT NULL,"
+				+ "DayOfWeekNum           smallint  NOT NULL,"
+				+ "FiscalYearID           smallint  NOT NULL,"
+				+ "FiscalQuarterID        smallint  NOT NULL,"
+				//+ "part_id                int       NOT NULL,"
+				+ "CONSTRAINT PK_DimDate PRIMARY KEY (SK_DateID));");
+		st.execute(
+				"CREATE INDEX IX_DimDate on DimDate(DateValue);");
+		
+		// dim time
+		st.execute(
+				"CREATE TABLE DimTime ("
+				+ "SK_TimeID              bigint    NOT NULL,"
+				+ "HourID                 smallint  NOT NULL,"
+				+ "MinuteID               smallint  NOT NULL,"
+				+ "SecondID               smallint  NOT NULL,"
+				//+ "part_id                int       NOT NULL,"
+				+ "CONSTRAINT PK_TimeID PRIMARY KEY (SK_TimeID));");
+		st.execute(
+				"CREATE INDEX IX_DimTime on DimTime(HourID,MinuteID,SecondID);");
+		
+		// clean up
+		st.close();
+	}
 
 	private void addBatchToTable(String tablename, List<Object[]> currBatch) throws SQLException {
 		//build string
@@ -434,6 +543,13 @@ public class TPCDILoader {
 		String inputCSV = sb.toString();
 		byte[] csvBytes = inputCSV.getBytes();
 		
+		CopyIn copier = tableCopiers.get(tablename);
+		copier.writeToCopy(csvBytes, 0, csvBytes.length);
+		copier.endCopy();
+		
+		copiedRowCount.get(tablename).addAndGet(currBatch.size());
+		
+		/*
 		switch(tablename){
     	case TPCDIConstants.DIMTRADE_TABLE:
     		break; // dimtrade isn't loaded
@@ -484,5 +600,6 @@ public class TPCDILoader {
     		dimAccountCopier.endCopy();
     		break;
     	}
+    	*/
 	}
 }

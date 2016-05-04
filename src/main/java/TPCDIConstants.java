@@ -55,6 +55,7 @@ public class TPCDIConstants {
     	//{DIMESSAGES_TABLE, DIMESSAGES_FILE},
     };
 
+    /*
     public static final int STATUSTYPE_COLS = 3;
     public static final int TRADETYPE_COLS = 5;
     public static final int DIMDATE_COLS = 9;
@@ -64,4 +65,5 @@ public class TPCDIConstants {
     public static final int DIMCOMPANY_COLS = 2;
 	public static final int DIMCUSTOMER_COLS = 2;
 	public static final int DIMACCOUNT_COLS = 5;
+	*/
 }
