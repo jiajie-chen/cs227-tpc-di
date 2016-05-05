@@ -25,8 +25,8 @@
         <module name="cs227-tpc-di" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="cs227-tpc-di" target="1.5" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="cs227-tpc-di" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
