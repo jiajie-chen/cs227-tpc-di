@@ -1,6 +1,5 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.util.Properties;
 
 import org.apache.commons.cli.CommandLine;
@@ -51,7 +50,7 @@ public class Main {
 					runOpt = false;
 				}
 			} catch (ParseException e) {
-				System.err.println( "Parsing failed.  Reason: " + e.getMessage() );
+				System.err.println( "-l arg parsing failed.  Reason: " + e.getMessage() );
 				System.exit(1);
 			}
 			
@@ -62,14 +61,15 @@ public class Main {
 		// run TPCDI benchmark with the command line arguments
 		try {
 			runTPCDI(loadData, runBenchmark);
+			//runTPCDI(true, false); // UNCOMMENT TO RUN JUST THE LOADER, COMMENT THE LINE ABOVE
 		} catch (Exception e) {
-			System.err.println( "Parsing failed.  Reason: " + e.getMessage() );
+			System.err.println( "Benchmark failed.  Reason: " + e.getMessage() );
 			System.exit(1);
 		}
 	}
 
 	private static void runTPCDI(boolean loadData, boolean runBenchmark) throws Exception {
-		// setup DB connections
+		// setup DB connections (FIX THE CONNECTION STRING)
 		String url = "jdbc:postgresql://localhost/test";
 		Properties props = new Properties();
 		props.setProperty("user","fred");
