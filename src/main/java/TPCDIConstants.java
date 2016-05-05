@@ -2,7 +2,7 @@
  * Created by Lexi on 3/16/16.
  */
 public class TPCDIConstants {
-	public static final String FILE_DIR = "withdebug/Batch1/";
+	public static final String FILE_DIR = "withdebug/Batch2/";
 	
 	
     public static final int STREAMINGESTOR_PORT = 18000;
