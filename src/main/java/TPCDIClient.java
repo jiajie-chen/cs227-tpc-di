@@ -1,9 +1,12 @@
 /**
  * Created by Lexi on 3/16/16.
  */
+import javafx.util.Pair;
+
 import java.io.BufferedInputStream;
 import java.net.Socket;
 import java.sql.*;
+import java.util.ArrayList;
 
 
 public class TPCDIClient {
@@ -15,6 +18,13 @@ public class TPCDIClient {
     public static final String getTradeTypeSQL = "SELECT TT_NAME FROM TradeType WHERE TT_ID = ?";
     public static final String getDateIDSQL = "SELECT SK_DateID FROM DimDate WHERE DateValue = ?";
     public static final String getTimeIDSQL = "SELECT SK_TimeID FROM DimTime WHERE HourID = ? AND MinuteID = ? AND SecondID = ?";
+    public static final String getSecurityIDSQL = "SELECT SK_SecurityID, SK_CompanyID FROM DimSecurity WHERE Symbol = ?";
+    public static final String getAccountInfoSQL = "SELECT SK_AccountID, SK_CustomerID,SK_BrokerID FROM DimAccount WHERE AccountID = ?";
+    public static final String insertDimTrade = "INSERT INTO DimTrade "
+                    + "(TradeID,SK_BrokerID,SK_CreateDateID,SK_CreateTimeID,SK_CloseDateID,SK_CloseTimeID,Status,Type,"
+                    + "CashFlag,SK_SecurityID,SK_CompanyID,Quantity,BidPrice,SK_CustomerID,SK_AccountID,"
+                    + "ExecutedBy,TradePrice,Fee,Commission,Tax)"
+                    + " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
 
     private String replaceWithZeroIfEmpty(String str) {
       if (str.isEmpty()) {
@@ -40,7 +50,7 @@ public class TPCDIClient {
 
     private Long getDateID(String T_DTS) {
         String date = T_DTS.split(" ")[0];
-        return TPCDIUtil.queryLongWithSingleParam(getDateIDSQL, c, getDateIDSQL)
+        return TPCDIUtil.queryLongWithSingleParam(getDateIDSQL, c, getDateIDSQL);
     }
 
     private Long getTimeID(String T_DTS) {
@@ -70,8 +80,72 @@ public class TPCDIClient {
         return TPCDIUtil.queryStringWithSingleParam(getTradeTypeSQL, c, tradeTypeID);
     }
 
-    private void run() {
+    private Pair<Long, Long> getSecurityID(String symbol) {
+        try {
+            PreparedStatement ps = c.prepareStatement(getSecurityIDSQL);
+            ps.setString(1, symbol);
+            ResultSet rs = ps.executeQuery();
+            // TODO Not sure what will be returned
+            return new Pair(rs.getLong(0), rs.getLong(1));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
+    private ArrayList<Long> getAccountInfo(int accountID) {
+        try {
+            PreparedStatement ps = c.prepareStatement(getAccountInfoSQL);
+            ps.setInt(1, accountID);
+            ResultSet rs = ps.executeQuery();
+            // TODO Not sure what will be returned
+            ArrayList<Long> res = new ArrayList<Long>();
+            res.add(0, rs.getLong(0));
+            res.add(1, rs.getLong(1));
+            res.add(2, rs.getLong(2));
+            return res;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    private void createTable() {
+        try {
+            Statement stmt = c.createStatement();
+            stmt.execute("DROP TABLE DimTrade;");
+            String sql = "CREATE TABLE DimTrade\n" +
+                    "    TradeID          bigint      NOT NULL,\n" +
+                    "    SK_BrokerID      bigint      ,\n" +
+                    "    SK_CreateDateID  bigint      NOT NULL,\n" +
+                    "    SK_CreateTimeID  bigint      NOT NULL,\n" +
+                    "    SK_CloseDateID   bigint      ,\n" +
+                    "    SK_CloseTimeID   bigint      ,\n" +
+                    "    Status           char(10)    NOT NULL,\n" +
+                    "    Type             char(12)    NOT NULL,\n" +
+                    "    CashFlag         smallint    NOT NULL,\n" +
+                    "    SK_SecurityID    bigint      NOT NULL,\n" +
+                    "    SK_CompanyID     bigint      NOT NULL,\n" +
+                    "    Quantity         int         NOT NULL,\n" +
+                    "    BidPrice         float     NOT NULL,\n" +
+                    "    SK_CustomerID    bigint      NOT NULL,\n" +
+                    "    SK_AccountID     bigint      NOT NULL,\n" +
+                    "    ExecutedBy       varchar(64) NOT NULL,\n" +
+                    "    TradePrice       float     ,\n" +
+                    "    Fee              float     ,\n" +
+                    "    Commission       float     ,\n" +
+                    "    Tax              float     ,\n" +
+                    ");";
+            stmt.execute(sql);
+            stmt.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println("Successfully create table");
+    }
+
+
+    private void run() {
         Socket clientSocket = null;
         BufferedInputStream in = null;
         int length = 0;
@@ -93,11 +167,22 @@ public class TPCDIClient {
                 String T_DTS = st[1];
                 String T_ST_ID = st[2];
                 String T_TT_ID = st[3];
+                short T_IS_CASH = new Short(st[4]);
                 String T_S_SYMB = st[5];
+                // Previous StoreProcedure 2
                 Long dateID = getDateID(T_DTS);
                 Long timeID = getTimeID(T_DTS);
                 String tradeType = getTradeType(T_TT_ID);
                 String status = getStatus(T_ST_ID);
+
+                int T_QTY = new Integer(st[6]);
+                double T_BID_PRICE = new Double(st[7]);
+                int T_CA_ID = new Integer(st[8]);
+                String T_EXEC_NAME = st[9];
+                double T_TRADE_PRICE = new Double(replaceWithZeroIfEmpty(st[10]));
+                double T_CHRG = new Double(replaceWithZeroIfEmpty(st[11]));
+                double T_COMM = new Double(replaceWithZeroIfEmpty(st[12]));
+                double T_TAX = new Double(replaceWithZeroIfEmpty(st[13]));
 
                 long SK_CreateDateID = -1;
                 long SK_CreateTimeID = -1;
@@ -112,23 +197,40 @@ public class TPCDIClient {
                     SK_CloseTimeID = timeID;
                 }
 
-// TODO: Insert into sp1out
-//                try {
-//                    Statement stmt = c.createStatement();
-//                    String insertSQL = "INSERT INTO SP1out (T_ID, T_DTS, T_ST_ID, T_TT_ID, T_IS_CASH, T_S_SYMB" +
-//                            ", T_QTY, T_BID_PRICE, T_CA_ID, T_EXEC_NAME, T_TRADE_PRICE, T_CHRG, T_COMM, T_TAX, batch_id, part_id) VALUES (" +
-//                            T_ID + ", \'" + st[1] + "\', \'" + st[2] + "\', \'" + st[3] + "\', " + new Short(st[4]) + ", \'" +
-//                            st[5] + "\', " + new Integer(st[6]) + ", " + new Double(st[7]) + ", " + new Integer(st[8]) + ", " +
-//                            st[9] + ", " + new Double(replaceWithZeroIfEmpty(st[10])) + ", " + new Double(replaceWithZeroIfEmpty(st[11])) + ", " +
-//                            new Double((replaceWithZeroIfEmpty(st[12]))) + ", " + new Double(replaceWithZeroIfEmpty(st[13])) + ", " + batchid + ", " +
-//                            partid + ");";
-//                    stmt.execute(insertSQL);
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
+                // Previous StoreProcedure 3
+                Pair<Long, Long> tmp = getSecurityID(T_S_SYMB);
+                long SK_SecurityID = tmp.getKey();
+                long SK_CompanyID = tmp.getValue();
 
-                // TODO: Insert into sp2out
+                // Previous StoreProcedure 4
+                ArrayList<Long> tmp2 = getAccountInfo(T_CA_ID);
+                long SK_AccountID = tmp2.get(0);
+                long SK_CustomerID = tmp2.get(1);
+                long SK_BrokerID = tmp2.get(2);
 
+                // Final Insertion
+                PreparedStatement ps = c.prepareStatement(insertDimTrade);
+                ps.setLong(1, T_ID);
+                ps.setLong(2, SK_BrokerID);
+                ps.setLong(3, SK_CreateDateID);
+                ps.setLong(4, SK_CreateTimeID);
+                ps.setLong(5, SK_CloseDateID);
+                ps.setLong(6, SK_CloseTimeID);
+                ps.setString(7, status);
+                ps.setString(8, tradeType);
+                ps.setShort(9, T_IS_CASH);
+                ps.setLong(10, SK_SecurityID);
+                ps.setLong(11, SK_CompanyID);
+                ps.setInt(12, T_QTY);
+                ps.setDouble(13, T_BID_PRICE);
+                ps.setLong(14, SK_CustomerID);
+                ps.setLong(15, SK_AccountID);
+                ps.setString(16, T_EXEC_NAME);
+                ps.setDouble(17, T_TRADE_PRICE);
+                ps.setDouble(18, T_CHRG);
+                ps.setDouble(19, T_COMM);
+                ps.setDouble(20, T_TAX);
+                ps.execute();
             }
 
         } catch (Exception e) {
@@ -139,43 +241,14 @@ public class TPCDIClient {
 
     }
 
-
     public static void main(String[] args) {
         TPCDIClient client = new TPCDIClient();
+        client.createTable();
+        long startTime = System.nanoTime();
+        client.run();
+        long endTime = System.nanoTime();
 
-        try {
-            Statement stmt = c.createStatement();
-            stmt.execute("DROP TABLE SP1out;");
-            String sql = "CREATE TABLE SP1out " +
-                    "(T_ID BIGINT NOT NULL, " +
-                    " T_DTS VARCHAR(30) NOT NULL, " +
-                    " T_ST_ID VARCHAR(4) NOT NULL, " +
-                    " T_TT_ID VARCHAR(3) NOT NULL, " +
-                    " T_IS_CASH SMALLINT NOT NULL, " +
-                    " T_S_SYMB VARCHAR(15) NOT NULL, " +
-                    " T_QTY INT NOT NULL, " +
-                    " T_BID_PRICE FLOAT NOT NULL, " +
-                    " T_CA_ID INT NOT NULL, " +
-                    " T_EXEC_NAME VARCHAR(49) NOT NULL, " +
-                    " T_TRADE_PRICE FLOAT, " +
-                    " T_CHRG FLOAT, " +
-                    " T_COMM FLOAT, " +
-                    " T_TAX FLOAT, " +
-                    " batch_id BIGINT NOT NULL, " +
-                    " part_id int NOT NULL" +
-                    ")";
-            stmt.execute(sql);
-            stmt.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        System.out.println("Successfully create table");
-
-
-
-
-
-
-
+        long duration = (endTime - startTime);
+        System.out.println("It took " + duration + "nanoseconds.");
     }
 }

@@ -69,14 +69,12 @@ public class Main {
 	}
 
 	private static void runTPCDI(boolean loadData, boolean runBenchmark) throws Exception {
-		// setup DB connections (FIX THE CONNECTION STRING)
-		String url = "jdbc:postgresql://localhost/test";
+		String url = "jdbc:postgresql://localhost:5432/Lexi";
 		Properties props = new Properties();
-		props.setProperty("user","fred");
-		props.setProperty("password","secret");
-		props.setProperty("ssl","true");
+		props.setProperty("user","Lexi");
+		props.setProperty("password","");
 		Connection dbConn = DriverManager.getConnection(url, props);
-		
+
 		// load data
 		if (loadData) {
 			TPCDILoader loader = new TPCDILoader(dbConn);
