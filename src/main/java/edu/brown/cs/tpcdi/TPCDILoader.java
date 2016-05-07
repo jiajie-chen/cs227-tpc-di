@@ -57,16 +57,26 @@ public class TPCDILoader {
         custIDs = new HashMap<Long, Long>();
         acctIDs = new HashMap<Long, Long>();
         objectType = new AtomicInteger();
-        
+
+
+		//drop and recreate the tables
+		createTables(dbConn);
+
         cm = new CopyManager((BaseConnection) dbConn);
         copiedRowCount = new HashMap<>(TPCDIConstants.LOADFILES.length);
         tableCopiers = new HashMap<>(TPCDIConstants.LOADFILES.length);
+
+
+		System.out.println("here");
         for (String[] s : TPCDIConstants.LOADFILES) {
         	// init row counts for all tables to be loaded
         	copiedRowCount.put(s[0], new AtomicLong());
         	// init copiers for all tables to be loaded (no escaping of table names...)
         	tableCopiers.put(s[0], cm.copyIn("COPY " + s[0] + " FROM STDIN WITH CSV"));
         }
+
+		System.out.println("here");
+
         /*
         statusTypeCopier = cm.copyIn("COPY " + TPCDIConstants.STATUSTYPE_TABLE + " FROM STDIN WITH CSV");
         tradeTypeCopier = cm.copyIn("COPY " + TPCDIConstants.TRADETYPE_TABLE + " FROM STDIN WITH CSV");
@@ -79,8 +89,7 @@ public class TPCDILoader {
         dimAccountCopier = cm.copyIn("COPY " + TPCDIConstants.DIMACCOUNT_TABLE + " FROM STDIN WITH CSV");
         */
         
-        // drop and recreate the tables
-        //createTables(dbConn);
+
     }
 	
 	public Object[] parseRow(String tablename, String tuple, int partId) {
@@ -239,7 +248,7 @@ public class TPCDILoader {
     	return row;
     };
 
-    //@Override
+	
     public void load() {
     	String loadfiles[][] = TPCDIConstants.LOADFILES;
         for(int i = 0; i < loadfiles.length; i++){
@@ -332,7 +341,7 @@ public class TPCDILoader {
 	
 	public void createTables(Connection dbConn) throws SQLException {
 		Statement st = dbConn.createStatement();
-		
+
 		// drop all tables to be loaded into
 		String[] tables = new String[TPCDIConstants.LOADFILES.length];
 		for (int i = 0; i < TPCDIConstants.LOADFILES.length; i++) {

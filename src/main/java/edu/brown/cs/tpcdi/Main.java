@@ -72,8 +72,8 @@ public class Main {
 	private static void runTPCDI(boolean loadData, boolean runBenchmark) throws Exception {
 		System.out.println("Started TPCDI");
 		
-		String url = "jdbc:postgresql://127.0.0.1:5432/tpcdi-DB";
-		String user = "postgres";
+		String url = "jdbc:postgresql://127.0.0.1:5432/Lexi";
+		String user = "Lexi";
 		String password = "";
 		Connection dbConn = DriverManager.getConnection(url, user, password);
 		
