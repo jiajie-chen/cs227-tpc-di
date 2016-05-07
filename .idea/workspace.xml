@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3873653-cfbe-42cc-a401-eb6e410a2f80" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.mvn-classpath" afterPath="$PROJECT_DIR$/.mvn-classpath" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/Main.java" afterPath="$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/TPCDILoader.java" afterPath="$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/TPCDILoader.java" />
     </list>
@@ -31,28 +27,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TPCDILoader.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/TPCDILoader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5557206">
-              <caret line="250" column="4" selection-start-line="250" selection-start-column="4" selection-end-line="250" selection-end-column="4" />
-              <folding>
-                <element signature="method#addBatchToTable#0;class#TPCDILoader#0" expanded="false" />
-                <marker date="1462662971000" expanded="true" signature="12537:12599" placeholder="DROP TABLE I... " />
-                <marker date="1462662971000" expanded="true" signature="12685:12995" placeholder="CREATE TABLE... TradeType" />
-                <marker date="1462662971000" expanded="true" signature="13039:13261" placeholder="CREATE TABLE... StatusType" />
-                <marker date="1462662971000" expanded="true" signature="13306:13577" placeholder="CREATE TABLE... DimSecurity" />
-                <marker date="1462662971000" expanded="true" signature="13693:13919" placeholder="CREATE TABLE... DimCustomer" />
-                <marker date="1462662971000" expanded="true" signature="13963:14184" placeholder="CREATE TABLE... DimCompany" />
-                <marker date="1462662971000" expanded="true" signature="14228:14534" placeholder="CREATE TABLE... DimAccount" />
-                <marker date="1462662971000" expanded="true" signature="14577:14793" placeholder="CREATE TABLE... DimBroker" />
-                <marker date="1462662971000" expanded="true" signature="14834:15365" placeholder="CREATE TABLE... DimDate" />
-                <marker date="1462662971000" expanded="true" signature="15475:15808" placeholder="CREATE TABLE... DimTime" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
@@ -63,11 +37,33 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="TPCDILoader.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/TPCDILoader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="5.8280606">
+              <caret line="374" column="50" selection-start-line="374" selection-start-column="50" selection-end-line="374" selection-end-column="50" />
+              <folding>
+                <element signature="method#addBatchToTable#0;class#TPCDILoader#0" expanded="false" />
+                <marker date="1462663032000" expanded="true" signature="12536:12598" placeholder="DROP TABLE I... " />
+                <marker date="1462663032000" expanded="true" signature="12684:12994" placeholder="CREATE TABLE... TradeType" />
+                <marker date="1462663032000" expanded="true" signature="13038:13260" placeholder="CREATE TABLE... StatusType" />
+                <marker date="1462663032000" expanded="true" signature="13305:13576" placeholder="CREATE TABLE... DimSecurity" />
+                <marker date="1462663032000" expanded="true" signature="13692:13918" placeholder="CREATE TABLE... DimCustomer" />
+                <marker date="1462663032000" expanded="true" signature="13962:14183" placeholder="CREATE TABLE... DimCompany" />
+                <marker date="1462663032000" expanded="true" signature="14227:14533" placeholder="CREATE TABLE... DimAccount" />
+                <marker date="1462663032000" expanded="true" signature="14576:14792" placeholder="CREATE TABLE... DimBroker" />
+                <marker date="1462663032000" expanded="true" signature="14833:15364" placeholder="CREATE TABLE... DimDate" />
+                <marker date="1462663032000" expanded="true" signature="15474:15807" placeholder="CREATE TABLE... DimTime" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-13.148149">
-              <caret line="83" column="41" selection-start-line="83" selection-start-column="41" selection-end-line="83" selection-end-column="41" />
+              <caret line="82" column="23" selection-start-line="82" selection-start-column="23" selection-end-line="82" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -920,12 +916,12 @@
       <workItem from="1462412228731" duration="144000" />
       <workItem from="1462421614622" duration="3856000" />
       <workItem from="1462629385971" duration="689000" />
-      <workItem from="1462657351600" duration="2779000" />
+      <workItem from="1462657351600" duration="2874000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37828000" />
+    <option name="totallyTimeSpent" value="37923000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="23" width="1676" height="1027" extended-state="6" />
@@ -1005,13 +1001,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tpcdi/orig/TPCDIProjectBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="55" column="29" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tpcdi/orig/TPCDIClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1260,7 +1249,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.148149">
-          <caret line="83" column="41" selection-start-line="83" selection-start-column="41" selection-end-line="83" selection-end-column="41" />
+          <caret line="82" column="23" selection-start-line="82" selection-start-column="23" selection-end-line="82" selection-end-column="23" />
           <folding />
         </state>
       </provider>
@@ -1368,6 +1357,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/TPCDIUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.123796426">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-21.25">
@@ -1378,20 +1375,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/TPCDILoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5557206">
-          <caret line="250" column="4" selection-start-line="250" selection-start-column="4" selection-end-line="250" selection-end-column="4" />
+        <state vertical-scroll-proportion="5.8280606">
+          <caret line="374" column="50" selection-start-line="374" selection-start-column="50" selection-end-line="374" selection-end-column="50" />
           <folding>
             <element signature="method#addBatchToTable#0;class#TPCDILoader#0" expanded="false" />
-            <marker date="1462662971000" expanded="true" signature="12537:12599" placeholder="DROP TABLE I... " />
-            <marker date="1462662971000" expanded="true" signature="12685:12995" placeholder="CREATE TABLE... TradeType" />
-            <marker date="1462662971000" expanded="true" signature="13039:13261" placeholder="CREATE TABLE... StatusType" />
-            <marker date="1462662971000" expanded="true" signature="13306:13577" placeholder="CREATE TABLE... DimSecurity" />
-            <marker date="1462662971000" expanded="true" signature="13693:13919" placeholder="CREATE TABLE... DimCustomer" />
-            <marker date="1462662971000" expanded="true" signature="13963:14184" placeholder="CREATE TABLE... DimCompany" />
-            <marker date="1462662971000" expanded="true" signature="14228:14534" placeholder="CREATE TABLE... DimAccount" />
-            <marker date="1462662971000" expanded="true" signature="14577:14793" placeholder="CREATE TABLE... DimBroker" />
-            <marker date="1462662971000" expanded="true" signature="14834:15365" placeholder="CREATE TABLE... DimDate" />
-            <marker date="1462662971000" expanded="true" signature="15475:15808" placeholder="CREATE TABLE... DimTime" />
+            <marker date="1462663032000" expanded="true" signature="12536:12598" placeholder="DROP TABLE I... " />
+            <marker date="1462663032000" expanded="true" signature="12684:12994" placeholder="CREATE TABLE... TradeType" />
+            <marker date="1462663032000" expanded="true" signature="13038:13260" placeholder="CREATE TABLE... StatusType" />
+            <marker date="1462663032000" expanded="true" signature="13305:13576" placeholder="CREATE TABLE... DimSecurity" />
+            <marker date="1462663032000" expanded="true" signature="13692:13918" placeholder="CREATE TABLE... DimCustomer" />
+            <marker date="1462663032000" expanded="true" signature="13962:14183" placeholder="CREATE TABLE... DimCompany" />
+            <marker date="1462663032000" expanded="true" signature="14227:14533" placeholder="CREATE TABLE... DimAccount" />
+            <marker date="1462663032000" expanded="true" signature="14576:14792" placeholder="CREATE TABLE... DimBroker" />
+            <marker date="1462663032000" expanded="true" signature="14833:15364" placeholder="CREATE TABLE... DimDate" />
+            <marker date="1462663032000" expanded="true" signature="15474:15807" placeholder="CREATE TABLE... DimTime" />
           </folding>
         </state>
       </provider>

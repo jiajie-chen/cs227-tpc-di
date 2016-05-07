@@ -58,7 +58,6 @@ public class TPCDILoader {
         acctIDs = new HashMap<Long, Long>();
         objectType = new AtomicInteger();
 
-
 		//drop and recreate the tables
 		createTables(dbConn);
 
