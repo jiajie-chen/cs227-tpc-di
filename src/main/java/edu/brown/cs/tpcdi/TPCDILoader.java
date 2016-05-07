@@ -58,6 +58,8 @@ public class TPCDILoader {
         acctIDs = new HashMap<Long, Long>();
         objectType = new AtomicInteger();
         
+        this.createTables(dbConn);
+        
         cm = new CopyManager((BaseConnection) dbConn);
         copiedRowCount = new HashMap<>(TPCDIConstants.LOADFILES.length);
         tableCopiers = new HashMap<>(TPCDIConstants.LOADFILES.length);

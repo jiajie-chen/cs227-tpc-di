@@ -81,9 +81,8 @@ public class Main {
 
 		// load data
 		if (loadData) {
-			TPCDILoader loader = new TPCDILoader(dbConn);
 			System.out.println("Creating Tables");
-			loader.createTables(dbConn);
+			TPCDILoader loader = new TPCDILoader(dbConn);
 			System.out.println("Loading...");
 			loader.load();
 			System.out.println("Finished Loading");
