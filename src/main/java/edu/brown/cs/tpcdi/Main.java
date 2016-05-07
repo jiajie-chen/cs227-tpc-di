@@ -1,3 +1,4 @@
+package edu.brown.cs.tpcdi;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.Properties;
@@ -69,17 +70,23 @@ public class Main {
 	}
 
 	private static void runTPCDI(boolean loadData, boolean runBenchmark) throws Exception {
-		String url = "jdbc:postgresql://localhost:5432/Lexi";
-		Properties props = new Properties();
-		props.setProperty("user","Lexi");
-		props.setProperty("password","");
-		Connection dbConn = DriverManager.getConnection(url, props);
+		System.out.println("Started TPCDI");
+		
+		String url = "jdbc:postgresql://127.0.0.1:5432/tpcdi-DB";
+		String user = "postgres";
+		String password = "";
+		Connection dbConn = DriverManager.getConnection(url, user, password);
+		
+		System.out.println("Connected to DB");
 
 		// load data
 		if (loadData) {
 			TPCDILoader loader = new TPCDILoader(dbConn);
+			System.out.println("Creating Tables");
 			loader.createTables(dbConn);
+			System.out.println("Loading...");
 			loader.load();
+			System.out.println("Finished Loading");
 		}
 		
 		// stop if not running benchmark (only when bulk loading)
