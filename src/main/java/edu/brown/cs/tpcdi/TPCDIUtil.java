@@ -21,7 +21,11 @@ public class TPCDIUtil {
             PreparedStatement ps = c.prepareStatement(sql);
             ps.setString(1, param);
             ResultSet rs = ps.executeQuery();
-            res = rs.getString(0);
+            if (rs.next()) {
+                res = rs.getString(1);
+            } else {
+                res = "";
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -34,7 +38,11 @@ public class TPCDIUtil {
             PreparedStatement ps = c.prepareStatement(sql);
             ps.setString(1, param);
             ResultSet rs = ps.executeQuery();
-            res = rs.getLong(0);
+            if (rs.next()) {
+                res = rs.getLong(1);
+            } else {
+                res = (long)-1;
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

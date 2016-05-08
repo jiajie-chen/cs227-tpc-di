@@ -8,24 +8,27 @@ import java.io.BufferedInputStream;
 import java.net.Socket;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 
 
 public class TPCDIClient {
     private Connection c = null;
-    public static final String databaseName = "Lexi";
-    public static final String databaseUsername = "Lexi";
-    public static final String databasePassword = "";
     public static final String getStatusSQL = "SELECT ST_NAME FROM StatusType WHERE ST_ID = ?";
     public static final String getTradeTypeSQL = "SELECT TT_NAME FROM TradeType WHERE TT_ID = ?";
-    public static final String getDateIDSQL = "SELECT SK_DateID FROM DimDate WHERE DateValue = ?";
+    public static final String getDateIDSQL = "SELECT SK_DateID FROM DimDate WHERE CAST(DateValue AS TEXT) LIKE ?;";
     public static final String getTimeIDSQL = "SELECT SK_TimeID FROM DimTime WHERE HourID = ? AND MinuteID = ? AND SecondID = ?";
-    public static final String getSecurityIDSQL = "SELECT SK_SecurityID, SK_CompanyID FROM DimSecurity WHERE Symbol = ?";
+    public static final String getSecurityIDSQL = "SELECT SK_SecurityID, SK_CompanyID FROM DimSecurity WHERE CAST(Symbol AS TEXT) LIKE ?";
     public static final String getAccountInfoSQL = "SELECT SK_AccountID, SK_CustomerID,SK_BrokerID FROM DimAccount WHERE AccountID = ?";
     public static final String insertDimTrade = "INSERT INTO DimTrade "
                     + "(TradeID,SK_BrokerID,SK_CreateDateID,SK_CreateTimeID,SK_CloseDateID,SK_CloseTimeID,Status,Type,"
                     + "CashFlag,SK_SecurityID,SK_CompanyID,Quantity,BidPrice,SK_CustomerID,SK_AccountID,"
                     + "ExecutedBy,TradePrice,Fee,Commission,Tax)"
                     + " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+
+    private HashMap<String, AtomicInteger> successCountMap;
+    private HashMap<String, AtomicInteger> failureCountMap;
 
     private String replaceWithZeroIfEmpty(String str) {
       if (str.isEmpty()) {
@@ -35,23 +38,34 @@ public class TPCDIClient {
       }
     }
 
-    public TPCDIClient() {
+    public TPCDIClient(Connection dbConn) {
+        successCountMap = new HashMap<String, AtomicInteger>();
+        failureCountMap = new HashMap<String, AtomicInteger>();
+
+        for (String[] s : TPCDIConstants.LOADFILES) {
+            // init row counts for all tables to be loaded
+            successCountMap.put(s[0], new AtomicInteger());
+            failureCountMap.put(s[0], new AtomicInteger());
+        }
+
         try {
-            Class.forName("org.postgresql.Driver");
-            c = DriverManager
-                    .getConnection("jdbc:postgresql://localhost:5432/" + databaseName,
-                            databaseUsername, databasePassword);
+            c = dbConn;
         } catch (Exception e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName()+": "+e.getMessage());
             System.exit(0);
         }
-        System.out.println("Opened database successfully");
     }
 
     private Long getDateID(String T_DTS) {
         String date = T_DTS.split(" ")[0];
-        return TPCDIUtil.queryLongWithSingleParam(getDateIDSQL, c, getDateIDSQL);
+        Long res = TPCDIUtil.queryLongWithSingleParam(getDateIDSQL, c, "%"+date+"%");
+        if (res == -1) {
+            failureCountMap.get(TPCDIConstants.DIMDATE_TABLE).incrementAndGet();
+        } else {
+            successCountMap.get(TPCDIConstants.DIMDATE_TABLE).incrementAndGet();
+        }
+        return res;
     }
 
     private Long getTimeID(String T_DTS) {
@@ -66,7 +80,13 @@ public class TPCDIClient {
             ps.setInt(2, min);
             ps.setInt(3, sec);
             ResultSet rs = ps.executeQuery();
-            res = rs.getLong(0);
+            if (rs.next()) {
+                successCountMap.get(TPCDIConstants.DIMTIME_TABLE).incrementAndGet();
+                res = rs.getLong(1);
+            } else {
+                failureCountMap.get(TPCDIConstants.DIMTIME_TABLE).incrementAndGet();
+                res = (long)-1;
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -74,20 +94,37 @@ public class TPCDIClient {
     }
 
     private String getStatus(String statusID) {
-        return TPCDIUtil.queryStringWithSingleParam(getStatusSQL, c, statusID);
+        String res = TPCDIUtil.queryStringWithSingleParam(getStatusSQL, c, statusID);
+        if (res == "") {
+            failureCountMap.get(TPCDIConstants.STATUSTYPE_TABLE).incrementAndGet();
+        } else {
+            successCountMap.get(TPCDIConstants.STATUSTYPE_TABLE).incrementAndGet();
+        }
+        return res;
     }
 
     private String getTradeType(String tradeTypeID) {
-        return TPCDIUtil.queryStringWithSingleParam(getTradeTypeSQL, c, tradeTypeID);
+        String res = TPCDIUtil.queryStringWithSingleParam(getTradeTypeSQL, c, tradeTypeID);
+        if (res == "") {
+            failureCountMap.get(TPCDIConstants.TRADETYPE_TABLE).incrementAndGet();
+        } else {
+            successCountMap.get(TPCDIConstants.TRADETYPE_TABLE).incrementAndGet();
+        }
+        return res;
     }
 
     private Pair<Long, Long> getSecurityID(String symbol) {
         try {
             PreparedStatement ps = c.prepareStatement(getSecurityIDSQL);
-            ps.setString(1, symbol);
+            ps.setString(1, "%"+symbol+"%");
             ResultSet rs = ps.executeQuery();
-            // TODO Not sure what will be returned
-            return new Pair(rs.getLong(0), rs.getLong(1));
+            if (rs.next()) {
+                successCountMap.get(TPCDIConstants.DIMSECURITY_TABLE).incrementAndGet();
+                return new Pair(rs.getLong(1), rs.getLong(2));
+            } else {
+                failureCountMap.get(TPCDIConstants.DIMSECURITY_TABLE).incrementAndGet();
+                return new Pair((long)-1, (long)-1);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -99,11 +136,20 @@ public class TPCDIClient {
             PreparedStatement ps = c.prepareStatement(getAccountInfoSQL);
             ps.setInt(1, accountID);
             ResultSet rs = ps.executeQuery();
-            // TODO Not sure what will be returned
             ArrayList<Long> res = new ArrayList<Long>();
-            res.add(0, rs.getLong(0));
-            res.add(1, rs.getLong(1));
-            res.add(2, rs.getLong(2));
+            if (rs.next()) {
+                res.add(0, rs.getLong(1));
+                res.add(1, rs.getLong(2));
+                res.add(2, rs.getLong(3));
+
+                successCountMap.get(TPCDIConstants.DIMACCOUNT_TABLE).incrementAndGet();
+            } else {
+                res.add(0, (long)-1);
+                res.add(1, (long)-1);
+                res.add(2, (long)-1);
+
+                failureCountMap.get(TPCDIConstants.DIMACCOUNT_TABLE).incrementAndGet();
+            }
             return res;
         } catch (Exception e) {
             e.printStackTrace();
@@ -111,11 +157,11 @@ public class TPCDIClient {
         return null;
     }
 
-    private void createTable() {
+    public void createTable() {
         try {
             Statement stmt = c.createStatement();
-            stmt.execute("DROP TABLE DimTrade;");
-            String sql = "CREATE TABLE DimTrade\n" +
+            stmt.execute("DROP TABLE IF EXISTS DimTrade;");
+            String sql = "CREATE TABLE DimTrade (" +
                     "    TradeID          bigint      NOT NULL,\n" +
                     "    SK_BrokerID      bigint      ,\n" +
                     "    SK_CreateDateID  bigint      NOT NULL,\n" +
@@ -135,18 +181,17 @@ public class TPCDIClient {
                     "    TradePrice       float     ,\n" +
                     "    Fee              float     ,\n" +
                     "    Commission       float     ,\n" +
-                    "    Tax              float     ,\n" +
+                    "    Tax              float     " +
                     ");";
             stmt.execute(sql);
             stmt.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println("Successfully create table");
+        System.out.println("Successfully Created the Destination Table: DimTrade");
     }
 
-
-    private void run() {
+    public void run() {
         Socket clientSocket = null;
         BufferedInputStream in = null;
         int length = 0;
@@ -155,14 +200,29 @@ public class TPCDIClient {
                     TPCDIConstants.STREAMINGESTOR_PORT);
             clientSocket.setSoTimeout(5000);
             in = new BufferedInputStream(clientSocket.getInputStream());
+
+            long startTime = System.nanoTime();
+            int count = 0;
             while (true) {
                 length = in.read();
                 if (length == -1) break;
                 byte[] messageByte = new byte[length];
                 in.read(messageByte);
                 String tuple = new String(messageByte);
+                if (tuple.trim().equals("")) break;
+
 
                 String[] st = tuple.split("\\|", -1);
+                if (st[0].trim().equals("")) break;
+
+                count++;
+                if (count % 1000 == 0) {
+                    System.out.println("We have loaded " + count + " tuples");
+                    long tmpTime = System.nanoTime();
+                    long sec = (tmpTime - startTime) / 1000000000;
+                    System.out.println(sec + " seconds since we start");
+                    System.out.println("Throughput: " + (double)count / sec + " tuples/sec");
+                }
 
                 long T_ID = new Long(st[0]);
                 String T_DTS = st[1];
@@ -234,22 +294,25 @@ public class TPCDIClient {
                 ps.execute();
             }
 
+            Long endTime = System.nanoTime();
+            long sec = (endTime - startTime) / 1000000000;
+            System.out.println(sec + " seconds in total.");
+            System.out.println(count+ " tuples.");
+            System.out.println("Throughput: " + (double)count / sec + " tuples/sec");
+            System.out.println("|TABLENAME|NUM OF SUCC LOOKUP|NUM OF FAIL LOOKUP|SUCCESS RATIO");
+            for (String[] s : TPCDIConstants.LOADFILES) {
+                // init row counts for all tables to be loaded
+                AtomicInteger a = successCountMap.get(s[0]);
+                AtomicInteger b = failureCountMap.get(s[0]);
+                System.out.printf("%11s %14d %20d %9f%%\n", s[0], a.intValue(), b.intValue(), a.doubleValue()/(a.doubleValue()+b.doubleValue())*100);
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-
-
     }
 
-    public static void main(String[] args) {
-        TPCDIClient client = new TPCDIClient();
-        client.createTable();
-        long startTime = System.nanoTime();
-        client.run();
-        long endTime = System.nanoTime();
 
-        long duration = (endTime - startTime);
-        System.out.println("It took " + duration + "nanoseconds.");
-    }
+
 }

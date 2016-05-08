@@ -3,7 +3,12 @@ package edu.brown.cs.tpcdi;
  * Created by Lexi on 3/16/16.
  */
 public class TPCDIConstants {
-	public static final String FILE_DIR = "withdebug/Batch2/";
+
+    public static final String databaseName = "Lexi";
+    public static final String databaseUsername = "Lexi";
+    public static final String databasePassword = "";
+
+	public static final String FILE_DIR = "withdebug/Batch1/";
 	
 	
     public static final int STREAMINGESTOR_PORT = 18000;
@@ -34,7 +39,6 @@ public class TPCDIConstants {
     public static final String DIMCOMPANY_FILE = "FINWIRE";
     public static final String DIMACCOUNT_FILE = "CustomerMgmt_debug.txt";
     public static final String DIMBROKER_FILE = "HR.csv";
-    //public static final String DIMESSAGES_FILE = "DiMessages";
     public static final String DIMDATE_FILE = "Date.txt";
     public static final String DIMTIME_FILE = "Time.txt";
     
@@ -42,8 +46,6 @@ public class TPCDIConstants {
     public static final String FINWIRE = "FINWIRE";
     
     public static final String LOADFILES[][] = {
-    	//{DIMTRADE_TABLE, DIMTRADE_FILE},
-    	//{TRADETXT_TABLE, TRADETXT_FILE},
     	{TRADETYPE_TABLE, TRADETYPE_FILE},
     	{STATUSTYPE_TABLE, STATUSTYPE_FILE},
     	{DIMCOMPANY_TABLE, DIMCOMPANY_FILE},
@@ -52,19 +54,6 @@ public class TPCDIConstants {
     	{DIMTIME_TABLE, DIMTIME_FILE},
     	{DIMBROKER_TABLE, DIMBROKER_FILE},
     	{DIMCUSTOMER_TABLE, DIMCUSTOMER_FILE},
-    	{DIMACCOUNT_TABLE, DIMACCOUNT_FILE},
-    	//{DIMESSAGES_TABLE, DIMESSAGES_FILE},
+    	{DIMACCOUNT_TABLE, DIMACCOUNT_FILE}
     };
-
-    /*
-    public static final int STATUSTYPE_COLS = 3;
-    public static final int TRADETYPE_COLS = 5;
-    public static final int DIMDATE_COLS = 9;
-    public static final int DIMTIME_COLS = 5;
-    public static final int DIMBROKER_COLS = 2;
-    public static final int DIMSECURITY_COLS = 4;
-    public static final int DIMCOMPANY_COLS = 2;
-	public static final int DIMCUSTOMER_COLS = 2;
-	public static final int DIMACCOUNT_COLS = 5;
-	*/
 }

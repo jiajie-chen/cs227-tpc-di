@@ -18,15 +18,15 @@ public class Main {
 		Options opt = new Options();
 		// add the option for loading
 		Option loader = Option.builder("l")
-				.desc("bulk load historic data, with optional boolean <run benchmark> to run benchmark after loading (defaults to false)")
 				.required(false)
 				.longOpt("load")
-				.hasArg(false)
-				.optionalArg(true)
-				.argName("run benchmark")
-				.type(Boolean.class)
+				.build();
+		Option benchmark = Option.builder("b")
+				.required(false)
+				.longOpt("benchmark")
 				.build();
 		opt.addOption(loader);
+		opt.addOption(benchmark);
 		
 		// parse all options from command line
 		CommandLineParser p = new DefaultParser();
@@ -41,24 +41,11 @@ public class Main {
 		// accumulate command line options and run
 		
 		boolean loadData = false;
-		boolean runBenchmark = true;
-		if (line.hasOption("l")) {
-			// determine if runBench argument is set
-			Boolean runOpt = null;
-			try {
-				runOpt = (Boolean) line.getParsedOptionValue("l");
-				if (runOpt == null) {
-					runOpt = false;
-				}
-			} catch (ParseException e) {
-				System.err.println( "-l arg parsing failed.  Reason: " + e.getMessage() );
-				System.exit(1);
-			}
-			
+		boolean runBenchmark = false;
+		if (line.hasOption("l"))
 			loadData = true;
-			runBenchmark = runOpt.booleanValue();
-		}
-		
+		if (line.hasOption("b"))
+			runBenchmark = true;
 		// run TPCDI benchmark with the command line arguments
 		try {
 			runTPCDI(loadData, runBenchmark);
@@ -70,14 +57,12 @@ public class Main {
 	}
 
 	private static void runTPCDI(boolean loadData, boolean runBenchmark) throws Exception {
-		System.out.println("Started TPCDI");
-		
-		String url = "jdbc:postgresql://127.0.0.1:5432/Lexi";
-		String user = "Lexi";
-		String password = "";
+		String url = "jdbc:postgresql://127.0.0.1:5432/" + TPCDIConstants.databaseName;
+		String user = TPCDIConstants.databaseUsername;
+		String password = TPCDIConstants.databasePassword;
 		Connection dbConn = DriverManager.getConnection(url, user, password);
 		
-		System.out.println("Connected to DB");
+		System.out.println("Connected to PostgresDB");
 
 		// load data
 		if (loadData) {
@@ -89,8 +74,12 @@ public class Main {
 		}
 		
 		// stop if not running benchmark (only when bulk loading)
-		if (!runBenchmark) {
-			return;
+		if (runBenchmark) {
+			System.out.println("Started TPCDI");
+
+			TPCDIClient client = new TPCDIClient(dbConn);
+			client.createTable();
+			client.run();
 		}
 		
 		// put all benchmark running code below!!

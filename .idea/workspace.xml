@@ -2,8 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3873653-cfbe-42cc-a401-eb6e410a2f80" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/Main.java" afterPath="$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/Main.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/TPCDIConstants.java" afterPath="$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/TPCDIConstants.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/TPCDILoader.java" afterPath="$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/TPCDILoader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/TPCDIUtil.java" afterPath="$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/TPCDIUtil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/Main.java" afterPath="$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/TPCDIClient.java" afterPath="$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/TPCDIClient.java" />
     </list>
     <ignored path="cs227-tpc-di.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,73 +38,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.25">
-              <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TPCDILoader.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TPCDILoader.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/TPCDILoader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="5.8280606">
-              <caret line="374" column="50" selection-start-line="374" selection-start-column="50" selection-end-line="374" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="296" column="38" selection-start-line="296" selection-start-column="38" selection-end-line="296" selection-end-column="38" />
               <folding>
-                <element signature="method#addBatchToTable#0;class#TPCDILoader#0" expanded="false" />
-                <marker date="1462663032000" expanded="true" signature="12536:12598" placeholder="DROP TABLE I... " />
-                <marker date="1462663032000" expanded="true" signature="12684:12994" placeholder="CREATE TABLE... TradeType" />
-                <marker date="1462663032000" expanded="true" signature="13038:13260" placeholder="CREATE TABLE... StatusType" />
-                <marker date="1462663032000" expanded="true" signature="13305:13576" placeholder="CREATE TABLE... DimSecurity" />
-                <marker date="1462663032000" expanded="true" signature="13692:13918" placeholder="CREATE TABLE... DimCustomer" />
-                <marker date="1462663032000" expanded="true" signature="13962:14183" placeholder="CREATE TABLE... DimCompany" />
-                <marker date="1462663032000" expanded="true" signature="14227:14533" placeholder="CREATE TABLE... DimAccount" />
-                <marker date="1462663032000" expanded="true" signature="14576:14792" placeholder="CREATE TABLE... DimBroker" />
-                <marker date="1462663032000" expanded="true" signature="14833:15364" placeholder="CREATE TABLE... DimDate" />
-                <marker date="1462663032000" expanded="true" signature="15474:15807" placeholder="CREATE TABLE... DimTime" />
+                <element signature="imports" expanded="true" />
+                <element signature="method#parseRow#0;class#TPCDILoader#0" expanded="false" />
+                <marker date="1462680074000" expanded="true" signature="10884:10946" placeholder="DROP TABLE I... " />
+                <marker date="1462680074000" expanded="true" signature="11032:11295" placeholder="CREATE TABLE... TradeType" />
+                <marker date="1462680074000" expanded="true" signature="11339:11514" placeholder="CREATE TABLE... StatusType" />
+                <marker date="1462680074000" expanded="true" signature="11559:11783" placeholder="CREATE TABLE... DimSecurity" />
+                <marker date="1462680074000" expanded="true" signature="11899:12078" placeholder="CREATE TABLE... DimCustomer" />
+                <marker date="1462680074000" expanded="true" signature="12122:12296" placeholder="CREATE TABLE... DimCompany" />
+                <marker date="1462680074000" expanded="true" signature="12340:12599" placeholder="CREATE TABLE... DimAccount" />
+                <marker date="1462680074000" expanded="true" signature="12642:12811" placeholder="CREATE TABLE... DimBroker" />
+                <marker date="1462680074000" expanded="true" signature="12852:13330" placeholder="CREATE TABLE... DimDate" />
+                <marker date="1462680074000" expanded="true" signature="13440:13720" placeholder="CREATE TABLE... DimTime" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.148149">
-              <caret line="82" column="23" selection-start-line="82" selection-start-column="23" selection-end-line="82" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TPCDIClient.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TPCDIClient.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/TPCDIClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.27419356">
+              <caret line="193" column="23" selection-start-line="193" selection-start-column="23" selection-end-line="193" selection-end-column="23" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#4077#4083#0" expanded="false" />
-                <marker date="1462657193000" expanded="true" signature="768:848" placeholder="SELECT SK_Ti... DimTime" />
-                <marker date="1462657193000" expanded="true" signature="902:970" placeholder="SELECT SK_Se... DimSecurity" />
-                <marker date="1462657193000" expanded="true" signature="1025:1107" placeholder="SELECT SK_Ac... DimAccount" />
-                <marker date="1462657193000" expanded="true" signature="1159:1546" placeholder="INSERT INTO DimTrade... " />
-                <marker date="1462657193000" expanded="true" signature="4454:4473" placeholder="DROP TABLE D... " />
-                <marker date="1462657193000" expanded="true" signature="4504:5867" placeholder="CREATE TABLE... DimTrade" />
+                <element signature="method#getDateID#0;class#TPCDIClient#0" expanded="false" />
+                <element signature="method#getTimeID#0;class#TPCDIClient#0" expanded="false" />
+                <element signature="method#getStatus#0;class#TPCDIClient#0" expanded="false" />
+                <element signature="method#getTradeType#0;class#TPCDIClient#0" expanded="false" />
+                <marker date="1462681933000" expanded="true" signature="743:823" placeholder="SELECT SK_Ti... DimTime" />
+                <marker date="1462681933000" expanded="true" signature="877:962" placeholder="SELECT SK_Se... DimSecurity" />
+                <marker date="1462681933000" expanded="true" signature="1017:1099" placeholder="SELECT SK_Ac... DimAccount" />
+                <marker date="1462681933000" expanded="true" signature="1151:1538" placeholder="INSERT INTO DimTrade... " />
+                <marker date="1462681933000" expanded="true" signature="6257:6286" placeholder="DROP TABLE D... " />
+                <marker date="1462681933000" expanded="true" signature="6317:7677" placeholder="CREATE TABLE... DimTrade" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package-info.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/package-info.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -129,8 +113,11 @@
         <option value="$PROJECT_DIR$/src/main/java/TPCDIConstants.java" />
         <option value="$PROJECT_DIR$/tpcdi/orig/TPCDILoader.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/TPCDIConstants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/TPCDIUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/TPCDILoader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/TPCDIClient.java" />
       </list>
     </option>
   </component>
@@ -261,8 +248,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
+      <pane id="PackagesPane">
+        <subPane />
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -271,127 +259,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cs227-tpc-di" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cs227-tpc-di" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cs227-tpc-di" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cs227-tpc-di" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="withdebug" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cs227-tpc-di" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cs227-tpc-di" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="withdebug" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Batch1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cs227-tpc-di" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cs227-tpc-di" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tpcdi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orig" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cs227-tpc-di" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cs227-tpc-di" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cs227-tpc-di" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cs227-tpc-di" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cs227-tpc-di" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cs227-tpc-di" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tpcdi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -916,12 +787,18 @@
       <workItem from="1462412228731" duration="144000" />
       <workItem from="1462421614622" duration="3856000" />
       <workItem from="1462629385971" duration="689000" />
-      <workItem from="1462657351600" duration="2874000" />
+      <workItem from="1462657351600" duration="16175000" />
+      <workItem from="1462680275981" duration="37000" />
+      <workItem from="1462680316181" duration="97000" />
+      <workItem from="1462680439459" duration="403000" />
+      <workItem from="1462680875436" duration="13000" />
+      <workItem from="1462680890762" duration="64000" />
+      <workItem from="1462680985143" duration="689000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37923000" />
+    <option name="totallyTimeSpent" value="52527000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="23" width="1676" height="1027" extended-state="6" />
@@ -929,28 +806,28 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32776618" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21189979" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2631265" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27505967" sideWeight="0.49164927" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27505967" sideWeight="0.50835073" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32776618" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21189979" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32934132" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -992,7 +869,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1001,6 +878,46 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/TPCDIClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#getDateID#0;class#TPCDIClient#0" expanded="false" />
+            <element signature="method#getTimeID#0;class#TPCDIClient#0" expanded="false" />
+            <element signature="method#getStatus#0;class#TPCDIClient#0" expanded="false" />
+            <element signature="method#getTradeType#0;class#TPCDIClient#0" expanded="false" />
+            <marker date="1462681933000" expanded="true" signature="743:823" placeholder="SELECT SK_Ti... DimTime" />
+            <marker date="1462681933000" expanded="true" signature="877:962" placeholder="SELECT SK_Se... DimSecurity" />
+            <marker date="1462681933000" expanded="true" signature="1017:1099" placeholder="SELECT SK_Ac... DimAccount" />
+            <marker date="1462681933000" expanded="true" signature="1151:1538" placeholder="INSERT INTO DimTrade... " />
+            <marker date="1462681933000" expanded="true" signature="6257:6286" placeholder="DROP TABLE D... " />
+            <marker date="1462681933000" expanded="true" signature="6317:7677" placeholder="CREATE TABLE... DimTrade" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/TPCDILoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#parseRow#0;class#TPCDILoader#0" expanded="false" />
+            <marker date="1462680074000" expanded="true" signature="10884:10946" placeholder="DROP TABLE I... " />
+            <marker date="1462680074000" expanded="true" signature="11032:11295" placeholder="CREATE TABLE... TradeType" />
+            <marker date="1462680074000" expanded="true" signature="11339:11514" placeholder="CREATE TABLE... StatusType" />
+            <marker date="1462680074000" expanded="true" signature="11559:11783" placeholder="CREATE TABLE... DimSecurity" />
+            <marker date="1462680074000" expanded="true" signature="11899:12078" placeholder="CREATE TABLE... DimCustomer" />
+            <marker date="1462680074000" expanded="true" signature="12122:12296" placeholder="CREATE TABLE... DimCompany" />
+            <marker date="1462680074000" expanded="true" signature="12340:12599" placeholder="CREATE TABLE... DimAccount" />
+            <marker date="1462680074000" expanded="true" signature="12642:12811" placeholder="CREATE TABLE... DimBroker" />
+            <marker date="1462680074000" expanded="true" signature="12852:13330" placeholder="CREATE TABLE... DimDate" />
+            <marker date="1462680074000" expanded="true" signature="13440:13720" placeholder="CREATE TABLE... DimTime" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tpcdi/orig/TPCDIClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1019,34 +936,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/.name">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1128,31 +1017,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpcdi/orig/tpcdiorig-ddl.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10135135">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="32" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tpcdi/orig/tpcdiorig.mappings">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.023219815">
           <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/src.zip!/java/util/concurrent/atomic/AtomicLong.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33279222">
-          <caret line="95" column="11" selection-start-line="95" selection-start-column="11" selection-end-line="95" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/postgresql/postgresql/9.1-901-1.jdbc4/postgresql-9.1-901-1.jdbc4.jar!/org/postgresql/copy/CopyManager.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34804752">
-          <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -1205,52 +1073,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/package-info.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/TPCDIClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#4077#4083#0" expanded="false" />
-            <marker date="1462657193000" expanded="true" signature="768:848" placeholder="SELECT SK_Ti... DimTime" />
-            <marker date="1462657193000" expanded="true" signature="902:970" placeholder="SELECT SK_Se... DimSecurity" />
-            <marker date="1462657193000" expanded="true" signature="1025:1107" placeholder="SELECT SK_Ac... DimAccount" />
-            <marker date="1462657193000" expanded="true" signature="1159:1546" placeholder="INSERT INTO DimTrade... " />
-            <marker date="1462657193000" expanded="true" signature="4454:4473" placeholder="DROP TABLE D... " />
-            <marker date="1462657193000" expanded="true" signature="4504:5867" placeholder="CREATE TABLE... DimTrade" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/run">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.classpath">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.148149">
-          <caret line="82" column="23" selection-start-line="82" selection-start-column="23" selection-end-line="82" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1258,7 +1084,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1276,7 +1101,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1289,7 +1113,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1297,31 +1120,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.42857143">
           <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/withdebug/Batch1/Date.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3">
-          <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpcdi/orig/TPCDILoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7111417">
-          <caret line="298" column="46" selection-start-line="298" selection-start-column="38" selection-end-line="298" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.project">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1329,7 +1127,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.041265473">
           <caret line="40" column="4" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1337,58 +1134,157 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.project">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.classpath">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29871976">
+          <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/TPCDIConstants.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/postgresql/postgresql/9.1-901-1.jdbc4/postgresql-9.1-901-1.jdbc4.jar!/org/postgresql/copy/CopyManager.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66024756">
-          <caret line="34" column="48" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.34571427">
+          <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/withdebug/Batch1/FINWIRE1967Q1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/package-info.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpcdi/orig/TPCDILoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.4301076">
+          <caret line="347" column="60" selection-start-line="347" selection-start-column="57" selection-end-line="347" selection-end-column="60" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/withdebug/Batch1/StatusType.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09677419">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpcdi/orig/tpcdiorig-ddl.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.74657536">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/withdebug/Batch1/TradeType.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.08064516">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/withdebug/Batch1/Date.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.9435216">
+          <caret line="117" column="34" selection-start-line="117" selection-start-column="34" selection-end-line="117" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/src.zip!/java/util/concurrent/atomic/AtomicLong.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09139785">
+          <caret line="198" column="37" selection-start-line="198" selection-start-column="22" selection-end-line="198" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/TPCDIConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7096774">
+          <caret line="47" column="31" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/TPCDIUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.123796426">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.5483871">
+          <caret line="40" column="28" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.25">
-          <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
-          <folding />
+        <state vertical-scroll-proportion="0.4516129">
+          <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/TPCDILoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.8280606">
-          <caret line="374" column="50" selection-start-line="374" selection-start-column="50" selection-end-line="374" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="296" column="38" selection-start-line="296" selection-start-column="38" selection-end-line="296" selection-end-column="38" />
           <folding>
-            <element signature="method#addBatchToTable#0;class#TPCDILoader#0" expanded="false" />
-            <marker date="1462663032000" expanded="true" signature="12536:12598" placeholder="DROP TABLE I... " />
-            <marker date="1462663032000" expanded="true" signature="12684:12994" placeholder="CREATE TABLE... TradeType" />
-            <marker date="1462663032000" expanded="true" signature="13038:13260" placeholder="CREATE TABLE... StatusType" />
-            <marker date="1462663032000" expanded="true" signature="13305:13576" placeholder="CREATE TABLE... DimSecurity" />
-            <marker date="1462663032000" expanded="true" signature="13692:13918" placeholder="CREATE TABLE... DimCustomer" />
-            <marker date="1462663032000" expanded="true" signature="13962:14183" placeholder="CREATE TABLE... DimCompany" />
-            <marker date="1462663032000" expanded="true" signature="14227:14533" placeholder="CREATE TABLE... DimAccount" />
-            <marker date="1462663032000" expanded="true" signature="14576:14792" placeholder="CREATE TABLE... DimBroker" />
-            <marker date="1462663032000" expanded="true" signature="14833:15364" placeholder="CREATE TABLE... DimDate" />
-            <marker date="1462663032000" expanded="true" signature="15474:15807" placeholder="CREATE TABLE... DimTime" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#parseRow#0;class#TPCDILoader#0" expanded="false" />
+            <marker date="1462680074000" expanded="true" signature="10884:10946" placeholder="DROP TABLE I... " />
+            <marker date="1462680074000" expanded="true" signature="11032:11295" placeholder="CREATE TABLE... TradeType" />
+            <marker date="1462680074000" expanded="true" signature="11339:11514" placeholder="CREATE TABLE... StatusType" />
+            <marker date="1462680074000" expanded="true" signature="11559:11783" placeholder="CREATE TABLE... DimSecurity" />
+            <marker date="1462680074000" expanded="true" signature="11899:12078" placeholder="CREATE TABLE... DimCustomer" />
+            <marker date="1462680074000" expanded="true" signature="12122:12296" placeholder="CREATE TABLE... DimCompany" />
+            <marker date="1462680074000" expanded="true" signature="12340:12599" placeholder="CREATE TABLE... DimAccount" />
+            <marker date="1462680074000" expanded="true" signature="12642:12811" placeholder="CREATE TABLE... DimBroker" />
+            <marker date="1462680074000" expanded="true" signature="12852:13330" placeholder="CREATE TABLE... DimDate" />
+            <marker date="1462680074000" expanded="true" signature="13440:13720" placeholder="CREATE TABLE... DimTime" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/brown/cs/tpcdi/TPCDIClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27419356">
+          <caret line="193" column="23" selection-start-line="193" selection-start-column="23" selection-end-line="193" selection-end-column="23" />
+          <folding>
+            <element signature="method#getDateID#0;class#TPCDIClient#0" expanded="false" />
+            <element signature="method#getTimeID#0;class#TPCDIClient#0" expanded="false" />
+            <element signature="method#getStatus#0;class#TPCDIClient#0" expanded="false" />
+            <element signature="method#getTradeType#0;class#TPCDIClient#0" expanded="false" />
+            <marker date="1462681933000" expanded="true" signature="743:823" placeholder="SELECT SK_Ti... DimTime" />
+            <marker date="1462681933000" expanded="true" signature="877:962" placeholder="SELECT SK_Se... DimSecurity" />
+            <marker date="1462681933000" expanded="true" signature="1017:1099" placeholder="SELECT SK_Ac... DimAccount" />
+            <marker date="1462681933000" expanded="true" signature="1151:1538" placeholder="INSERT INTO DimTrade... " />
+            <marker date="1462681933000" expanded="true" signature="6257:6286" placeholder="DROP TABLE D... " />
+            <marker date="1462681933000" expanded="true" signature="6317:7677" placeholder="CREATE TABLE... DimTrade" />
           </folding>
         </state>
       </provider>
